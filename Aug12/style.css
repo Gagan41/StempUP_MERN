@@ -1,0 +1,18 @@
+.ani{
+  color: brown;
+}
+#head{
+  color: chartreuse;
+}
+
+div p{
+  color: red;
+}
+
+div h1{
+  color: coral;
+}
+
+a[href="youtube.com"] {
+  color: purple;
+}
