@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors & Colors</title>
+
+  
+    <link rel="stylesheet" href="style.css">
+
+   
+    <style>
+      
+        h1 { color: purple; } 
+        .highlight { color: orange; }
+        #uniqueBtn { background-color: lightblue; color: black; } 
+
+       
+        h2, h3, h4 {
+            color: teal;
+            font-family: Arial, sans-serif;
+        }
+
+        div p { color: blue; } 
+        div > p { font-weight: bold; color: green; }
+
+        
+        a[href="https://www.google.com"] { color: red; }
+        a[href$=".org"] { color: blue; }
+    </style>
+</head>
+<body>
+    <h1>1. Basic Selectors</h1>
+    <p class="highlight">This paragraph is styled using a class selector.</p>
+    <div>I'm a div styled with an element selector.</div>
+    <span style="color: brown;">I'm a span styled with inline CSS.</span>   
+    <button id="uniqueBtn">I'm styled using an ID selector</button>
+
+    <hr>
+
+    <h1>2. Grouping Selectors</h1>
+    <h2>Heading Two</h2>
+    <h3>Heading Three</h3>
+    <h4>Heading Four</h4>
+
+    <hr>
+
+    <h1>3. Descendant & Child Selectors</h1>
+    <div>
+        <p>First P inside div (child + descendant)</p>
+        <p>Second P inside div (child + descendant)</p>
+        <span><p>P inside span inside div (descendant only)</p></span>
+    </div>
+    <p>Outside P (no special style)</p>
+
+    <hr>
+
+    <h1>4. Attribute Selectors</h1>
+    <ul>
+        <li><a href="https://www.google.com">Google</a></li>
+        <li><a href="https://www.wikipedia.org">Wikipedia</a></li>
+        <li><a href="https://example.com">Example</a></li>
+    </ul>
+
+    <hr>
+
+    <h1>Part B — CSS Colors</h1>
+
+    <h2>1. Named Colors</h2>
+    <div class="color-box red">Red</div>
+    <div class="color-box blue">Blue</div>
+    <div class="color-box green">Green</div>
+    <div class="color-box orange">Orange</div>
+
+    <h2>2. HEX Colors</h2>
+    <div class="color-box" style="background-color: #FF5733;">#FF5733</div>
+    <div class="color-box" style="background-color: #33FF57;">#33FF57</div>
+    <div class="color-box" style="background-color: #3357FF;">#3357FF</div>
+
+    <h2>3. RGB & RGBA Colors</h2>
+    <div class="color-box" style="background-color: rgb(255, 0, 0);">RGB</div>
+    <div class="color-box" style="background-color: rgba(0, 0, 255, 0.5);">RGBA 50%</div>
+    <div class="color-box" style="background-color: rgb(0, 255, 0);">RGB</div>
+
+    <h2>4. HSL & HSLA Colors</h2>
+    <div class="color-box" style="background-color: hsl(0, 100%, 50%);">HSL Red</div>
+    <div class="color-box" style="background-color: hsl(120, 100%, 50%);">HSL Green</div>
+    <div class="color-box" style="background-color: hsla(240, 100%, 50%, 0.5);">HSLA Blue 50%</div>
+</body>
+</html>

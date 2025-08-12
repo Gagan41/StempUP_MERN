@@ -1,0 +1,18 @@
+
+.color-box {
+    width: 120px;
+    height: 50px;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}
+
+
+.red { background-color: red; }
+.blue { background-color: blue; }
+.green { background-color: green; }
+.orange { background-color: orange; }
