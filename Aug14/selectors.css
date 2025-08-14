@@ -1,0 +1,52 @@
+p {
+  color: blue;
+}
+
+#main {
+  font-size: 32px;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+h1,
+h2 {
+  color: darkgreen;
+}
+
+p span {
+  font-weight: bold;
+}
+
+.menu {
+  text-transform: uppercase;
+}
+
+div > p {
+  border: 2px solid black;
+}
+
+h2 + p {
+  color: orange;
+}
+
+a {
+  color: red;
+}
+
+input[type="password"] {
+  background-color: lightpink;
+}
+input[type="password"]:hover{
+  background-color: green;
+}
+
+img[alt="image"]{
+  border: 5px solid black;
+}
+
+a:hover{
+  text-decoration: none;
+  color: green;
+}
