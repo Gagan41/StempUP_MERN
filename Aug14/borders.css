@@ -1,0 +1,31 @@
+.first {
+  border: 2px solid black;
+  border-style: dashed;
+}
+.second {
+  border: 8px solid lightblue;
+  border-style: dotted;
+}
+.third {
+  border: 2px solid yellow;
+  border-style: double;
+}
+.fourth {
+  border: 2px solid pink;
+  border-style: inset;
+}
+.fifth {
+  border: 2px solid black;
+  border-style: outset;
+}
+.sixth {
+  border: 2px;
+  border-style: ridge;
+}
+.seventh {
+  border: 2px solid;
+  border-right-width: 3dvb;
+  border-left-width: 3dvb ;
+  border-top-width: 6rem;
+  border-bottom-width: 6rem;
+}
