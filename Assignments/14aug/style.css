@@ -1,0 +1,104 @@
+* {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  background-color: hsl(38, 96%, 72%); 
+  padding: 20px;
+}
+
+
+#main-title {
+  font-size: 2.5rem;
+  background: linear-gradient(to right, #ffa726, #ef6c00);
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.highlight {
+  text-transform: uppercase;
+}
+
+
+p {
+  font-family: Georgia, serif;
+  color: #5c2c00; 
+  text-align: center;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+#food-menu {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+#food-menu li {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #5c2c00; 
+  margin: 5px 0;
+}
+
+
+input[type="email"] {
+  border: 2px solid #8d6e63; 
+}
+
+
+table {
+  border-collapse: collapse;
+  background-color: #fff3e0;
+}
+
+th {
+  background-color: #ef6c00; 
+  color: white;
+  padding: 10px;
+}
+
+td {
+  text-align: center;
+  padding: 10px;
+  color: #5c2c00;
+}
+
+.discount-10 {
+  color: #d84315; 
+}
+
+.discount-15 {
+  color: #e65100; 
+}
+
+.discount-20 {
+  color: #ff5722; 
+}
+
+tr:nth-child(even) {
+  background-color: #ffe0b2; /* Light orange alternate rows */
+}
+
+table tr:hover {
+  background-color: #ffd180; /* Hover effect */
+}
+
+button {
+  background-color: rgba(239, 108, 0, 0.9);
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: rgba(255, 87, 34, 1);
+}
