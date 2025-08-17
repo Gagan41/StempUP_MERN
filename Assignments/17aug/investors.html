@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ApexCorp Global — Build Beyond.</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/128/7915/7915382.png" />
+  </head>
+  <body bgcolor="#f2f2f2">
+    <a href="#main-content">Skip to content</a>
+
+    <header>
+      <center>
+        <h1>Investors</h1>
+        <nav aria-label="Primary">
+          <ul type="none">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="investors.html" aria-current="page">Investors</a></li>
+          </ul>
+        </nav>
+      </center>
+    </header>
+
+    <main id="main-content">
+      <section aria-labelledby="facts-heading">
+        <center>
+          <h2 id="facts-heading">Key Facts</h2>
+          <table border="1" width="60%" cellpadding="8" bgcolor="#ffffff">
+            <tbody>
+              <tr>
+                <th align="left">Founded</th>
+                <td>2010</td>
+              </tr>
+              <tr>
+                <th align="left">Headquarters</th>
+                <td>New York, USA</td>
+              </tr>
+              <tr>
+                <th align="left">Employees</th>
+                <td>5,200+</td>
+              </tr>
+              <tr>
+                <th align="left">Ticker</th>
+                <td>APXG (NASDAQ)</td>
+              </tr>
+              <tr>
+                <th align="left">FY2024 Revenue</th>
+                <td>$2.4B</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Documents:
+            <a href="#">Annual Report (PDF)</a> |
+            <a href="#">Corporate Governance (DOCX)</a>
+          </p>
+        </center>
+      </section>
+
+      <section aria-labelledby="ir-form-heading">
+        <center>
+          <h2 id="ir-form-heading">Investor Relations Contact</h2>
+          <form action="mailto:ir@apexcorp.global" method="post" enctype="text/plain">
+            <table border="1" cellpadding="8" width="60%" bgcolor="#ffffff">
+              <tbody>
+                <tr>
+                  <td><label for="name">Name</label></td>
+                  <td><input type="text" id="name" name="name" required /></td>
+                </tr>
+                <tr>
+                  <td><label for="email">Email</label></td>
+                  <td><input type="email" id="email" name="email" required /></td>
+                </tr>
+                <tr>
+                  <td><label for="company">Company</label></td>
+                  <td><input type="text" id="company" name="company" /></td>
+                </tr>
+                <tr>
+                  <td><label for="query-type">Query Type</label></td>
+                  <td>
+                    <select id="query-type" name="query_type" required>
+                      <option value="">-- Select --</option>
+                      <option value="earnings">Earnings</option>
+                      <option value="media">Media</option>
+                      <option value="partnerships">Partnerships</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="message">Message</label></td>
+                  <td>
+                    <textarea id="message" name="message" rows="6" cols="40" required></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <input type="checkbox" id="consent" name="consent" value="agree" required />
+                    <label for="consent">
+                      I consent to the processing of my information for IR purposes.
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" align="center">
+                    <button type="submit">Send</button>
+                    <button type="reset">Reset</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </center>
+      </section>
+    </main>
+
+    <footer>
+      <center>
+        <hr />
+        <p>&copy; 2025 ApexCorp Global. All rights reserved.</p>
+      </center>
+    </footer>
+  </body>
+</html>
