@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Box Model Demo</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      .margin {
+        background: #6a0dad;
+        margin: 50px auto;
+        padding: 20px;
+        outline: 3px dashed black;
+        width: max-content;
+      }
+      .margin:hover {
+        background: #003e1f;
+      }
+
+      .border {
+        border: 4px solid black;
+        padding: 20px;
+        background: white;
+      }
+      .border:hover {
+        background: #0319e1;
+      }
+
+      .padding {
+        padding: 20px;
+        background: white;
+        border-style: solid;
+      }
+      .padding:hover {
+        background: #cae34de1;
+      }
+
+      .content {
+        width: 150px;
+        height: 100px;
+        background: #ba55d3;
+        border: 2px solid black;
+        padding-top: 40px;
+      }
+      .content:hover {
+        background: #fe043e;
+      }
+
+      .label {
+        font-weight: bold;
+        color: black;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="margin">
+        <div class="label">Margin</div>
+        <div class="border">
+          <div class="label">Border</div>
+          <div class="padding">
+            <div class="label">Padding</div>
+            <div class="content">
+              <span>Content</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
