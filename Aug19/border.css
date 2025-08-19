@@ -1,0 +1,36 @@
+.example-red {
+  border-color: red;
+  border-style: solid;
+}
+
+.example-hex {
+  border-color: #ff22ff;
+  border-style: solid;
+}
+.example-all {
+  border-top-color: #ff22ff;
+  border-left-color: #e80c0c;
+  border-bottom-color: aquamarine;
+  border-right-color: blue;
+  border-style: solid;
+}
+.example-shorthand {
+  border: 5px solid #333;
+}
+
+.example-rounded {
+  border: 2px solid blue;
+  border-radius: 8px;
+}
+.example-circle {
+  border: 2px solid green;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background: #05f6de;
+}
+.example-circle:hover{
+  background: #06ff72;
+  width: 80px;
+  height: 80px;
+}
