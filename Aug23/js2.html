@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS 2</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>see the console for output</h1>
+    <script>
+      //Global scope
+      var a = 10; //global scope
+      let b = 20; //global scope
+      const c = 30; //global scope
+
+      console.log("Global Scope:");
+      console.log(a); //accessable anywhere
+      console.log(b); //accessable anywhere
+      console.log(c); //accessable anywhere
+
+      //Function scope
+      function testFunctionScope() {
+        var funa = "a in function scope";
+        let funb = "b in function scope";
+        const func = "c in function scope";
+
+        console.log("\nInside function");
+        console.log(funa); //accessable in function
+        console.log(funb); //accessable in function
+        console.log(func); //accessable in function
+      }
+      testFunctionScope();
+      //consile.log(funa); throws error as funa is undefines cause ut is inside the function and cannot be accessable outside the function in which it is declared
+
+      //Block scope
+      {
+        var blka = "a in block scope";
+        let blkb = "b in block scope";
+        const blkc = "c in block scope";
+
+        console.log("\nInside Block");
+        console.log(blka);
+        console.log(blkb);
+        console.log(blkc);
+      }
+      console.log("\noutside Block"); 
+      console.log(blka); //accessable (var is not block scoped)
+      //console.log(blkb);  error cause blkb is inside the block
+      //console.log(blkc); error cause blkc is insdie the block
+    </script>
+  </body>
+</html>
