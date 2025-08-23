@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operators in JS</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>Operators in JS</h1>
+    <h1>see the console for output</h1>
+    <script>
+      //Arithematic operation
+      let a = 10,
+        b = 3;
+      console.log("\nArithematic operation");
+      console.log("a+b :", a + b); //addition
+      console.log("a-b :", a - b); //subtraction
+      console.log("a*b :", a * b); //multiplication
+      console.log("a/b :", a / b); //division
+      console.log("a%b :", a % b); //modulus
+      console.log("a**b :", a ** b); //exponential
+
+      //Assignment operators
+      let x = 5;
+      console.log("\nassignment operator");
+      x += 2;
+      console.log("x+=2 :", x);
+      x -= 1;
+      console.log("x-=1 :", x);
+
+      //comparision opeartors
+      let p = 10,
+        q = "10";
+      console.log("\ncomparision opeartors");
+      console.log("p == q", p == q); //checks only value
+      console.log("p===q", p === q); //strict equal (value = type)
+      console.log("p!=q", p != q); //not equal
+      console.log("p>q", p > q); //greater than
+      console.log("p<=q", p <= q); //less than or equal
+
+      //logical opearators
+      let con1 = true,
+        con2 = false;
+      console.log("\nlogical operators");
+      console.log("& operator ", con1 && con2); //AND
+      console.log("| operator ", con1 || con2); //OR
+      console.log("! operator", !con1); //NOT
+
+      //increment and decrement operators
+      let n = 5;
+      console.log("\nIncrement/Decrement");
+      console.log("n++", n++); // post increment use then increase
+      console.log("After n++", n);
+      console.log("++n", ++n); //pre increment increase then use
+      console.log("num--", n--); //post decrement
+      console.log("After num--", n);
+
+      //ternary operators
+      let age = 15;
+      let res = age >= 18 ? "Eligible to vote" : "not eligible";
+      console.log("\nTernary operator");
+      console.log("result is:", res);
+    </script>
+  </body>
+</html>
