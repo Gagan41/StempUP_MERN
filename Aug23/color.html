@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>color chnage</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <style>
+    .color {
+      color: green;
+    }
+  </style>
+  <body>
+    <h1 id="h1tag">The color of the title text is now black</h1>
+    <button onclick="changecolor()">Change color</button>
+    <hr />
+    <br />
+
+    <img
+      id="image"
+      src="bulb-off.jpg"
+      alt="bulb-off"
+      width="150"
+      height="250"
+    />
+    <br />
+    <button onclick="changeImage()">On</button>
+    <script>
+      function changecolor() {
+        //document.getElementById("h1tag").style.color = "green";  //inline CSS
+        document.getElementById("h1tag").innerHTML =
+          "<p class ='color'> The color is now green</p>"; //external CSS
+      }
+
+      function changeImage() {
+        document.getElementById("image").src = "bulb-on.jpg";
+      }
+    </script>
+  </body>
+</html>
