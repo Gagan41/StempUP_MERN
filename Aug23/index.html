@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb</title>
+    <style>
+        *{
+            transition:  0.5s;
+        }
+        body {
+            transition: background-color 0.5s;
+            background-color: rgba(255, 255, 2, 0.398);
+        }
+        img {
+            cursor: pointer;
+        }
+        #offImage {
+            display: block;
+            opacity: 0.9;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+        #onImage {
+            display: none;
+              box-shadow: 0 0 500px 10px yellow;
+              border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img id="onImage" src="images/on.png" alt="on image" width="200px" height="250px">
+        <img id="offImage" src="images/off.png" alt="off image" width="200px" height="250px">
+    </div>
+    <script>
+        const onImage = document.getElementById('onImage');
+        const offImage = document.getElementById('offImage');
+
+        onImage.addEventListener( 'mouseout', () => {
+            onImage.style.display = 'none';
+            offImage.style.display = 'block';
+            document.body.style.backgroundColor = 'black';
+        });
+
+        offImage.addEventListener('mouseover', () => {
+            offImage.style.display = 'none';
+            onImage.style.display = 'block';
+            document.body.style.backgroundColor = 'rgba(255, 255, 2, 0.398)';
+        });
+    </script>
+</body>
+</html>
