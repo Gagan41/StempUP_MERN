@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inner Text</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <p id="output">Not Changed</p>
+    <button onclick="Greet()">change</button>
+    <script>
+      function Greet() {
+        document.getElementById("output").innerHTML =
+          "<u>Changed using button</u>";
+      }
+    </script>
+
+    <h1>Result :<p id="output1"></p></h1>
+    <hr>
+    <button onclick="calculate()">calculate</button>
+    <script>
+      let a = parseInt(prompt("Enter value of a:"));
+      let b = parseInt(prompt("Enter value of B:"));
+      function calculate(){
+        if(a>b){
+           document.getElementById("output1").innerHTML = a;
+        } else{
+          document.getElementById("output1").innerHTML = b;
+        }  
+      }
+    </script>
+  </body>
+</html>
