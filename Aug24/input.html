@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <label for="age">Age</label> <br><br>
+    <input type="number" placeholder="Enter your age" name="age" id="age"> <br><br>
+    <button onclick="check( document.getElementById('age').value)">Check Eligibility</button>
+    <script>
+      function check(age){
+        (age>=18) ? alert(`Your age is ${age} and eligible for voting`) : alert(`Your age is ${age} and not eligible`);
+        // let age = document.getElementById('age').value;
+        // (age>=18) ? alert(`Your age is ${age} and eligible for voting`) : alert(`Your age is ${age} and not eligible`);
+      }
+    </script>
+  </body>
+</html>
