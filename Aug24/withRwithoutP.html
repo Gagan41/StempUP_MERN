@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>With return and without parameter</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>With return and without parameter</h1>
+    <input type="text" id="name" placeholder="Enter your fullname" />
+    <br /><br />
+    <button onclick="document.getElementById('output').innerHTML = wish()">
+      Click me
+    </button>
+    <p id="output"></p>
+
+    <script>
+      function wish() {
+        let userName = document.getElementById("name").value;
+        return "Good Afternoon, " + userName;
+      }
+    </script>
+  </body>
+</html>
