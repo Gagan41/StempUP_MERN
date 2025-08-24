@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditional Statements</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+</head>
+<body>
+  <h1>Conditional Statements in JS</h1>
+  <input type="number" id="num" placeholder="Enter a number"> <br><br>
+  <button onclick="checkCondition()">Check</button> <br><br>
+
+  <p id="output"></p>
+
+  <script>
+    function checkCondition(){
+      let n = document.getElementById('num').value;
+      let res = "";
+
+      //if
+      if(n>0){
+        res += "if: Number is positive<br>";
+      }
+
+      //if else
+      if(n%2 === 0){
+        res += "if .. else: Number is even.<br>";
+      } else {
+        res += "if .. else: Number is odd.<br>";
+      }
+
+      //if..else.if..else
+      if(n<0){
+        res += "if..esle, if..else:Negative Number.<br>";
+      } else if(n === 0) {
+        res += "if..else, if..else:zero.<br>";
+      } else{
+        res += "if..esle,if..else: Positive Number.<br>";
+      }
+
+      //switch
+      switch(n){
+        case 1: 
+         res += "switch: You have entered one<br>";
+         break;
+        case 2:
+         res += "Switch: You have enetered two<br>"; 
+         break;
+        default: 
+         res += "switch: number is neither one or two.<br>"; 
+      }
+
+      //ternary
+      res += "ternary: " + (n>=18 ? "Eligible to vote" : "Not eligible to vote") + "<br>";
+
+      document.getElementById("output").innerHTML = res;
+    }
+  </script>
+</body>
+</html>
