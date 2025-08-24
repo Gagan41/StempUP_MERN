@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loops in JS</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>loops Statements in JS</h1>
+    <input type="number" id="num" placeholder="Enter a number" /> <br /><br />
+    <button onclick="checkLoops()">Check</button> <br /><br />
+
+    <p id="output"></p>
+    <script>
+      function checkLoops() {
+        let n = document.getElementById("num").value;
+        let res = "";
+
+        // for loop print 1 to n
+        for (let i = 1; i <= n; i++) {
+          res += "for loop: " + i + "<br>";
+        }
+
+        // while loop
+        let i = 1;
+        while (i <= n) {
+          res += "while loop: " + i + "<br>";
+          i++;
+        }
+
+        // do while loop
+        i = 1;
+        do {
+          res += "do while loop: " + i + "<br>";
+          i++;
+        } while (i <= n);
+
+        //for in loop : loops thrpugh key properties of an object
+        let person = { name: "Ani", age: 22, city: "Bangalore" };
+        res += "for in loop {object}.<br>";
+        for (let key in person) {
+          res += key + ": " + person[key] + " | ";
+        }
+        res += "<br>";
+
+        //for..of loop + array values 
+        let arr = ["apple", "mango", "Bannana"];
+        res += "for of loop {array}.<br>";
+        for(let fruit of arr){
+          res += fruit + " ";
+        }
+        res += "<br>"
+
+        document.getElementById("output").innerHTML = res;
+      }
+    </script>
+  </body>
+</html>
