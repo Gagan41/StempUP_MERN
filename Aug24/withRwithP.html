@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>With Return and With Parameter</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <style>
+    *{
+      background: lightblue;
+    }
+    button{
+      padding: 20px;
+      margin: 10px;
+      background-color: aquamarine;
+      border-radius: 25%;
+    }
+    p{
+      font-style: italic;
+    }
+  </style>
+  <body>
+    <h1>With Return and With Parameter</h1>
+
+    <input type="text" id="name" placeholder="Enter your fullname" /> <br>
+    <button onclick="showWish()">Click Here</button> <br>
+    <button onclick="document.getElementById('result').innerHTML = wish(document.getElementById('name').value)">Wish</button>
+    <p id="result"></p>
+    <p id="output"></p>
+
+    <script>
+      function wish(fullname) {
+        return "Good morning " + fullname;
+      }
+      function showWish() {
+        let fullname = document.getElementById("name").value;
+        let message = wish(fullname);
+        document.getElementById("output").innerHTML = message;
+      }
+    </script>
+  </body>
+</html>
