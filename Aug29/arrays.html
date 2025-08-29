@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>See the console for output</h1>
+    <p id="res"></p>
+    <script>
+      let fruits = ["Apple", "Bannana", "Mango"];
+      let numbers = [10, 20, 30, 40, 50];
+      let mixed = [100, "Arrays", true, 3.14];
+
+      document.getElementById("res").innerText = fruits;
+
+      console.log("Fruits Array:", fruits);
+      console.log("Numbers Array:", numbers);
+      console.log("Mixed Array:", mixed);
+
+      //Accessing array elements
+      console.log("\nAccessing elements");
+      console.log("first fruit:", fruits[0]);
+      console.log("Second Number:", numbers[1]);
+      console.log("Mixed value:", mixed[2]);
+
+      //Modifying Array Elements
+      fruits[1] = "orange";
+      numbers[4] = 90;
+      console.log("\nAfter Modification");
+      console.log("Updated fruits:", fruits);
+      console.log("Updated numbers:", numbers);
+
+      //Array Length 
+      console.log("\nlength of fruits Array:", fruits.length);
+
+      //Iterating through arrays
+      // a.using traditional for loop
+      console.log("\nIterating with for loop");
+      for(let i=0; i<fruits.length; i++){
+        console.log("Fruit at index ",i,":", fruits[i]);
+      }
+
+      // b.using  for of loop(easier syntax)
+      console.log("\nIterating through for...of loop:");
+      for(let fruit of fruits){
+        console.log(fruit);
+      }
+
+      // c.using forEach method(callback function)
+      console.log("\niterating with for each method");
+      fruits.forEach((fruit,index) => {
+         console.log("Index ", index," has", fruit);
+      });
+
+      //Adding new elements
+      fruits.push("pineapple"); // add at the end
+      fruits.unshift("strawberry"); //add at the beginning
+      console.log("\n Afrer adding elements:", fruits);
+
+      //Removing elements
+      fruits.pop(); //remove from last
+      fruits.shift(); // remove first element
+      console.log("After removing elements:", fruits);
+    </script>
+  </body>
+</html>

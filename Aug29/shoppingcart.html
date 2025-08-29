@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+    <title>Shopping cart</title>
+  </head>
+  <body>
+    <h1>See the console for output</h1>
+    <script>
+      //inventory starts with few items (name, proice, quantity)
+      let cart = [
+        { name: "laptop", price: 50000, qty: 1 },
+        { name: "Phone", price: 25000, qty: 2 },
+        { name: "Head Phone", price: 2000, qty: 3 },
+        { name: "laptop", price: 45000, qty: 8 },
+      ];
+
+      console.log("Initial cart:", cart);
+
+      //push add new items at the end
+      cart.push({ name: "Mouse", price: 1500, qty: 4 });
+      console.log("\nAfter pushing(aaded mouse):", cart);
+
+      //unshift add at the beginning
+      cart.unshift({ name: "charger", price: 500, qty: 3 });
+      console.log("\nAfter ushift (added charger):", cart);
+
+      //pop remove last element
+      cart.pop();
+      console.log("\nAfter pop (removed last item):", cart);
+
+      //shift() remove first item
+      cart.shift();
+      console.log("\nAfter shiidt (removed first item):", cart);
+
+      //splice() add/remove in between
+      cart.splice(1, 0, { name: "Tablet", price: 15000, qty: 3 });
+      console.log("Splice added tablet at index 1:", cart);
+
+      //remove 1 item at index 2
+      cart.splice(1, 2);
+      console.log("\nAfter slice removed item at index 2:", cart);
+
+      //slice - copy part of array
+      let newCart = cart.slice(0, 2);
+      console.log("\nslice first 2 items:", newCart);
+
+      //concat() - merge Arrays
+      let extraItems = [
+        { name: "KeyBoard", price: 2000, qty: 1 },
+        { name: "USb cable", price: 200, qty: 3 },
+      ];
+      let mergeCart = cart.concat(extraItems);
+      console.log("\nAfter concat", mergeCart);
+
+      //indexOf() + includes() - search in simple array
+      let itemname = cart.map((item) => item.name);
+      console.log("\nitem names:", itemname);
+
+      console.log("\nIndex of phone:", itemname.indexOf("Phone"));
+      console.log("\nIncluded laptop:", itemname.includes("laptop"));
+
+      //find() -> find first matching item
+      let pitem = cart.find((item) => item.name === "laptop");
+      console.log("\nfind() Phone laptop:", pitem);
+
+      //filter() get item bymqty > 1
+      let mqty = cart.filter((item) => item.qty > 1);
+      console.log("\n filter() item by qty>1:", mqty);
+    </script>
+  </body>
+</html>
