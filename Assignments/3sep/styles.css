@@ -1,0 +1,162 @@
+:root {
+  --bg: #0b1220;
+  --card: #121a2b;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --border: #1f2a44;
+  --add: #22c55e;   /* green */
+  --remove: #ef4444; /* red */
+  --check: #3b82f6; /* blue */
+  --neutral: #6b7280; /* gray */
+  --shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(
+    1000px 500px at 50% -200px,
+    #1b2a4a 0%,
+    var(--bg) 60%
+  );
+  color: var(--text);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.site-header,
+.site-footer {
+  width: min(900px, 92vw);
+  padding: 1rem 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.4rem, 1.2rem + 1vw, 2rem);
+}
+.tagline {
+  color: var(--muted);
+  margin: 0.25rem 0 0;
+}
+
+main {
+  width: min(900px, 92vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+.card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.btn {
+  border: 1px solid var(--border);
+  background: #0f172a;
+  color: var(--text);
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.06s ease, box-shadow 0.06s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+.btn:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.4);
+  outline-offset: 2px;
+}
+
+.btn-add {
+  border-color: rgba(34, 197, 94, 0.4);
+}
+.btn-add:hover {
+  background: rgba(34, 197, 94, 0.15);
+}
+
+.btn-remove {
+  border-color: rgba(239, 68, 68, 0.4);
+}
+.btn-remove:hover {
+  background: rgba(239, 68, 68, 0.15);
+}
+
+.btn-check {
+  border-color: rgba(59, 130, 246, 0.4);
+}
+.btn-check:hover {
+  background: rgba(59, 130, 246, 0.15);
+}
+
+.btn-neutral {
+  border-color: rgba(107, 114, 128, 0.4);
+}
+.btn-neutral:hover {
+  background: rgba(107, 114, 128, 0.15);
+}
+
+.output {
+  min-height: 110px;
+  padding: 0.75rem;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  background: #0b1220;
+  white-space: pre-wrap;
+  margin-top: 1rem;
+}
+
+.site-footer {
+  margin-top: auto;
+  text-align: center;
+  color: var(--muted);
+  padding-bottom: 1.25rem;
+}
+
+/* Responsive tweaks */
+@media (min-width: 700px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+  main > .card:last-of-type {
+    grid-column: 1 / -1;
+  }
+}

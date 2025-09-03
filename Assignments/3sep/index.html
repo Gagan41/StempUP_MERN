@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Library Book Tracker</title>
+
+    <link rel="icon" type="image/png" href="Images/favicon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <img
+          src="Images/logo.png"
+          alt="Library Book Tracker logo"
+          class="logo"
+        />
+        <h1>Library Book Tracker</h1>
+      </div>
+      <p class="tagline">
+        Manage your library with basic JavaScript array methods.
+      </p>
+    </header>
+
+    <main>
+      <!-- Array Operations -->
+      <section aria-labelledby="ops-section-title" class="card">
+        <h2 id="ops-section-title">Array Operations</h2>
+
+        <article class="op-group">
+          <h3>Add</h3>
+          <div class="row">
+            <label for="addBookInput" class="label">push() — Add to end:</label>
+            <input
+              id="addBookInput"
+              type="text"
+              class="input"
+              placeholder="e.g., Percy Jackson"
+            />
+            <button id="pushBtn" class="btn btn-add">Push</button>
+          </div>
+
+          <div class="row">
+            <label for="addFirstInput" class="label"
+              >unshift() — Add to beginning:</label
+            >
+            <input
+              id="addFirstInput"
+              type="text"
+              class="input"
+              placeholder="e.g., Game of Thrones"
+            />
+            <button id="unshiftBtn" class="btn btn-add">Unshift</button>
+          </div>
+        </article>
+
+        <article class="op-group">
+          <h3>Remove</h3>
+          <div class="row">
+            <span class="label">pop() — Remove last:</span>
+            <button id="popBtn" class="btn btn-remove">Pop</button>
+          </div>
+
+          <div class="row">
+            <span class="label">shift() — Remove first:</span>
+            <button id="shiftBtn" class="btn btn-remove">Shift</button>
+          </div>
+        </article>
+
+        <article class="op-group">
+          <h3>Search</h3>
+          <div class="row">
+            <label for="searchInput" class="label"
+              >includes() / indexOf() — Book title:</label
+            >
+            <input
+              id="searchInput"
+              type="text"
+              class="input"
+              placeholder="e.g., The Hobbit"
+            />
+            <button id="includesBtn" class="btn btn-check">Includes?</button>
+            <button id="indexOfBtn" class="btn btn-check">IndexOf</button>
+          </div>
+        </article>
+
+        <article class="op-group">
+          <h3>Demo</h3>
+          <div class="row">
+            <button
+              id="demoBtn"
+              class="btn btn-outline"
+              title="Run the example sequence from the problem statement"
+            >
+              Run Demo
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <!-- Results -->
+      <section aria-labelledby="output-section-title" class="card">
+        <h2 id="output-section-title">Results</h2>
+        <article>
+          <div
+            id="output"
+            class="output"
+            aria-live="polite"
+            aria-atomic="true"
+          ></div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <small
+        >&copy; <span id="year"></span> Library Book Tracker — Built with HTML,
+        CSS &amp; JavaScript</small
+      >
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
