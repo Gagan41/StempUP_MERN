@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numbers in JS</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>Numbers in html</h1>
+    <h2>see the console for output</h2>
+    <script>
+      let x = 42;
+      let y = 3.14159;
+      let z = 5e3;
+      let n = NaN;
+      let infinity = Infinity;
+      console.log("x:", x, "Y:", y, "z:", z, "n:", n, "infinity:", infinity); // 42, 3.14159, 5000, NaN, Infinity
+
+      //type checking
+      console.log("type of x:", typeof x); //
+      console.log("type of y:", typeof y); //
+      console.log("Is Nan(n)?", isNaN(n)); // true
+      console.log("Is Integral(x)?", Number.isInteger(x)); //
+      console.log("Max safe integer:", Number.MAX_SAFE_INTEGER); //
+      console.log("Min safe integer:", Number.MIN_SAFE_INTEGER); // - (2^53 -1)
+
+      //conversions
+      let str = "123.45";
+      console.log("parseInt(str):", parseInt(str)); //123
+      console.log("parseFloat(str):", parseFloat(str)); //123.45
+      console.log("Number(str):", Number(str)); //123.45
+
+      console.log("Number('abc'):", Number("abc")); // NaN
+      console.log("Boolean to number:", Number(true), Number(false)); // 1, 0
+
+      //formatting Numbers
+      let num = 123.456789;
+      console.log("toExponential:", num.toExponential(2)); // 1.23e+2
+
+      //math object
+      //built-in object for mathematical constants and functions
+      console.log("Math.PI:", Math.PI); // 3.14159...
+      console.log("Math.E:", Math.E); // 2.71828...
+
+      console.log("Math.round(4.7):", Math.round(4.7)); // 5
+      console.log("Math.floor(4.7):", Math.floor(4.7)); // 4
+      console.log("Math.ceil(4.3):", Math.ceil(4.3)); // 5
+      console.log("Math.trunc(4.7):", Math.trunc(4.7)); // 4
+
+      console.log("Math.sqrt(25):", Math.sqrt(25)); // 5
+      console.log("Math.pow(2, 3):", Math.pow(2, 3)); // 8
+      console.log("2 ** 3:", 2 ** 3); // 8 ** is exponentiation operator
+
+      console.log("Math.abs(-7):", Math.abs(-7)); // 7
+      console.log("Math.min(3, 1, 4):", Math.min(3, 1, 4)); // 1
+      console.log("Math.max(3, 1, 4):", Math.max(3, 1, 4)); // 4
+
+      console.log("math.random():", Math.random()); // random number between 0 and 1
+      console.log("math.random() * 10:", Math.round(Math.random() * 10)); // random number between 0 and 10
+      console.log("Random (1-100):", Math.floor(Math.random() * 100) + 1); // random integer between 1 and 100
+
+      //BigInt
+      //for integer values larger than 2^53 -1 use BigInt(suffix n)
+      let bigInt = 1234567890123456789012345678901234567890n;
+      console.log("bigInt:", bigInt);
+    </script>
+  </body>
+</html>
