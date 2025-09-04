@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dates in JS</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>dates in JS</h1>
+    <h2>see the console for output</h2>
+    <script>
+      //declaration and initialization
+      //current date and time
+      let now = new Date();
+      console.log("Current date and time:", now);
+
+      //crate date with specific date string
+      let date1 = new Date("2025-09-04"); //yyyy-mm-dd
+      console.log("specific date:", date1);
+
+      //create date with year, month(0-based), day, hour, minute, second  o-jan....11-dec
+      let date2 = new Date(2025, 8, 4, 10, 30, 15);
+      console.log("custom date & time:", date2);
+
+      //from timestamp(milliseconds since jan, 1970)
+      let date3 = new Date(0);
+      console.log("Epoch start:", date3);
+
+      //getting componenets
+      console.log("Year:", now.getFullYear()); // year 4 digit
+      console.log("Month:", now.getMonth()); // month 0-11
+      console.log("Date:", now.getDate()); // day of month 1-31
+      console.log("Day:", now.getDay()); // day of week 0-6 (0-sun, 1-mon,...6-sat)
+      console.log("Hours:", now.getHours()); // 0-23
+      console.log("Minutes:", now.getMinutes()); // 0-59
+      console.log("Seconds:", now.getSeconds()); // 0-59
+      console.log("Milliseconds:", now.getMilliseconds()); // 0-999
+      console.log("Timestamp:", now.getTime()); // milliseconds since jan 1, 1970
+
+      //setting components
+      let d = new Date();
+      d.setFullYear(2030);
+      d.setMonth(11); // december
+      d.setDate(25);
+      d.setHours(12,45,0); //12:45:00
+      console.log("Updated date:", d);
+    </script>
+  </body>
+</html>
