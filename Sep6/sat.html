@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numbers</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>Numbers and strings</h1>
+    <h2>see the console for output</h2>
+    <script>
+      let x = 9.656;
+      console.log("toExponential()");
+      console.log(x.toExponential());
+      console.log(x.toExponential(2));
+      console.log(x.toExponential(4));
+      console.log(x.toExponential(6));
+ 
+      //toString()
+      console.log("\ntoString()");
+      let y = 25;
+      console.log(y.toString());
+      console.log((10+5).toString());
+
+      //tofixed()
+      console.log("\ntoFixed()");
+      console.log(x.toFixed(0));
+      console.log(x.toFixed(2));  
+      console.log(x.toFixed(4));
+      console.log(x.toFixed(6));
+
+      //toPrecision()
+      console.log("\ntoPrecision()");
+      console.log(x.toPrecision());
+      console.log(x.toPrecision(2));  
+      console.log(x.toPrecision(4));
+      console.log(x.toPrecision(6));
+    </script>
+  </body>
+</html>
