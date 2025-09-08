@@ -1,0 +1,26 @@
+/* Simple styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+}
+
+header {
+  background: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+main {
+  padding: 1.5rem;
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 0.7rem;
+  margin-top: 2rem;
+}
