@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects properties printing</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>Onjects printing</h1>
+    <h2>see the console for output</h2>
+    <p id="res"></p>
+    <!-- <p id="res1"></p> -->
+    <p id="res2"></p>
+    <p id="res3"></p>
+    <script>
+      const person = new Object({
+        fname: "Alice",
+        lname: "Johnson",
+        id: 53,
+        age: 30,
+        city: "New York",
+      });
+
+      //printing the properties of an object using for...in loop
+      for (let key in person) {
+        console.log(key + ": " + person[key]);
+      }
+
+      let text = "";
+      for (let x in person) {
+        text += person[x] + ",";
+      }
+      document.getElementById("res").innerText = text;
+
+      const myarry = Object.values(person);
+      // document.getElementById("res1").innerText = myarry;
+
+      const mystring = myarry.toString();
+      document.getElementById("res2").innerText = mystring;
+
+      //object.entries() method
+      const myentries = Object.entries(person);
+      console.log(myentries);
+      document.getElementById("res3").innerText = myentries;
+    </script>
+  </body>
+</html>
