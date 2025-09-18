@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects in JS</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>Objects in JS</h1>
+    <h2>see the console for output</h2>
+    <p id="output"></p>
+    <p id="output1"></p>
+    <p id="res"></p>
+    <p id="res1"></p>
+    <script>
+      const fruits = {
+        apple: 10,
+        banana: 5,
+        orange: 8,
+      };
+      console.log(fruits);
+      console.log(fruits.apple);
+
+      const person = new Object({
+        fname: "Alice",
+        lname: "Johnson",
+        id: 53,
+        age: 30,
+        city: "New York",
+        fullname: function () {
+          return this.fname + " " + this.lname;
+        },
+      });
+      console.log(person);
+      console.log(`First name of the person is: ${person.fname}`);
+      console.log(person["fname"]);
+      console.log(`Full name is: ${person.fullname()}`);// if parantehsis is not used it will return the function definition
+
+      document.getElementById("output").innerText = `Fruits: ${JSON.stringify(
+        fruits
+      )}, Person: ${JSON.stringify(person)}`;
+
+      document.getElementById(
+        "output1"
+      ).innerText = `First name of the person is: ${person.fname}`;
+
+      document.getElementById(
+        "res"
+      ).innerHTML = `Full name is : ${person.fullname()}`;
+    </script>
+  </body>
+</html>
