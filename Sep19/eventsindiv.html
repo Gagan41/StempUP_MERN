@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>div event listener</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <div
+      id="mydiv"
+      style="width: 200px; height: 200px; background-color: lightblue"
+    >
+      Click or hover over me!
+    </div>
+    <hr />
+    <p id="1">Hey</p>
+    <button onclick="onclickfun()">click on me</button>
+    <hr />
+    <p id="2">this is black color</p>
+    <button ondblclick="ondblclickfun()">double click me</button>
+    <hr />
+    <p id="3">this is black color</p>
+    <button onmouseup="onmouseupfun()" onmousedown="onmousedownfun()">
+      on mouse up and down
+    </button>
+    <hr>
+    <p id="4">this is black color</p>
+    <button onmouseenter="onmouseenterfun()">hover over me</button>
+    <hr>
+    <p id="5">this is black color</p>
+    <button onmouseleave="onmouseleavefun()">leave me</button>
+
+    <script>
+      const myDiv = document.getElementById("mydiv");
+
+      // Click event listener
+      myDiv.addEventListener("click", function () {
+        alert("Div clicked!");
+      });
+
+      // Mouseover event listener
+      myDiv.addEventListener("mouseover", function () {
+        myDiv.style.backgroundColor = "lightgreen";
+      });
+
+      // Mouseout event listener
+      myDiv.addEventListener("mouseout", function () {
+        myDiv.style.backgroundColor = "lightblue";
+      });
+
+      function onclickfun() {
+        document.getElementById("1").innerText = "Hello";
+      }
+
+      function ondblclickfun() {
+        document.getElementById("2").style.color = "red";
+      }
+
+      function onmousedownfun() {
+        document.getElementById("3").style.color = "blue";
+      }
+
+      function onmouseupfun() {
+        document.getElementById("3").style.color = "green";
+      }
+
+      function onmouseenterfun() {
+        document.getElementById("4").style.color = "orange";
+      }
+
+      function onmouseleavefun() {
+        document.getElementById("5").style.color = "purple";
+      }
+    </script>
+  </body>
+</html>
