@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyboard Event listner</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h2>click the button</h2>
+    <button id="btn">Click me</button>
+    <p id="msg"></p>
+    <hr />
+    <h2>Keyboard Event listener</h2>
+    <p>Press "Enter" or "Space" while focusing on the button</p>
+    <button id="btn2">click me</button>
+    <p id="msg2"></p>
+    <hr />
+    <button id="keyp">keyup</button>
+    <p id="msg3"></p>
+    <hr />
+    <script>
+      let btn = document.getElementById("btn");
+      let msg = document.getElementById("msg");
+
+      btn.addEventListener("click", () => {
+        msg.textContent = "Button clicked";
+      });
+
+      // Adding keyboard event listener to the button
+      btn2 = document.getElementById("btn2");
+      let msg2 = document.getElementById("msg2");
+      btn2.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          msg2.textContent = "Button activated via keyboard";
+        }
+      });
+
+      let msg3 = document.getElementById("msg3");
+      let keyp = document.getElementById("keyp");
+      keyp.addEventListener("keyup", (event) => {
+        msg3.textContent = `Key released: ${event.key}`;
+      });
+    </script>
+  </body>
+</html>
