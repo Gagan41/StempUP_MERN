@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>weak set in JS</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>weak set in JS</h1>
+    <h2>see the console for output</h2>
+    <script>
+      let ws = new WeakSet();
+
+      let obj1 = { fname: "obj1", lname: "last" };
+      let obj2 = { name: "obj2" };
+
+      ws.add(obj1);
+      ws.add(obj2);
+
+      console.log("WeakSet has obj1:", ws.has(obj1)); // true
+      console.log("WeakSet has obj2:", ws.has(obj2)); // true
+
+      obj1 = null; // Remove the reference to obj1
+
+      // Note: We cannot directly check if obj1 is still in the WeakSet
+      // because WeakSets do not provide a way to iterate or list their contents.
+      // However, we can demonstrate that obj1 is no longer accessible.
+
+      setTimeout(() => {
+        console.log("After setting obj1 to null:");
+        console.log("WeakSet has obj1:", ws.has({ name: "obj1" })); // false, as obj1 is no longer referenced
+        console.log("WeakSet has obj2:", ws.has(obj2)); // true
+      }, 1000);
+    </script>
+  </body>
+</html>
