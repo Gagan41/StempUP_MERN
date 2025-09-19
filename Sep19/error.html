@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error handling in JS</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <p id="errorMsg"></p>
+
+    <p>Please input a number between 5 and 10:</p>
+    <input type="text" id="userInput" />
+    <button type="button" onclick="myFunction()">Test Input</button>
+    <p id="p01"></p>
+
+    <script>
+      // Example error handling
+      try {
+        adddlert("Welcome guest!"); // Misspelled function name
+      } catch (e) {
+        document.getElementById("errorMsg").innerHTML = e.message;
+      }
+
+      function myFunction() {
+        const msg = document.getElementById("p01");
+        msg.innerHTML = "";
+        let x = document.getElementById("userInput").value;
+
+        try {
+          if (x.trim() == "") throw "empty";
+          if (isNaN(x)) throw "not a number";
+          x = Number(x);
+          if (x < 5) throw "too low";
+          if (x > 10) throw "too high";
+          if (x >= 5 && x <= 10) msg.innerHTML = "Input is " + x;
+        } catch (err) {
+          msg.innerHTML = "Input is " + err;
+        } finally {
+          document.getElementById("userInput").value = "";
+        }
+      }
+    </script>
+  </body>
+</html>
