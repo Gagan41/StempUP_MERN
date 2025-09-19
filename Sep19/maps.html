@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maps in JS</title>
+  </head>
+  <body>
+    <h1>Maps in JS</h1>
+    <h2>see the console for output</h2>
+    <script>
+      // Creating a Map
+      const myMap = new Map();
+      const fruits = new Map([
+        ["apple", 500],
+        ["banana", 300],
+        ["cherry", 200],
+      ]);
+
+      console.log(fruits); // Output: Map(3) {"apple" => 500, "banana" => 300, "cherry" => 200}
+      console.log(typeof fruits); // Output: object
+      console.log(fruits instanceof Map); // Output: true
+
+      // Adding key-value pairs
+      myMap.set("name", "Alice");
+      myMap.set("age", 30);
+      myMap.set("city", "New York");
+
+      // Retrieving values
+      console.log(myMap.get("name")); // Output: Alice
+      console.log(myMap.get("age")); // Output: 30
+
+      // Checking for existence of a key
+      console.log(myMap.has("city")); // Output: true
+      console.log(myMap.has("country")); // Output: false
+
+      // Getting the size of the map
+      console.log(myMap.size); // Output: 3
+
+      // Iterating over the map
+      myMap.forEach((value, key) => {
+        console.log(`${key}: ${value}`);
+      });
+
+      let text = "";
+      for (let x of fruits.entries()) {
+        text += x + " ";
+      }
+      console.log(text); // Output: apple,500 banana,300 cherry,200
+
+      // Deleting a key-value pair
+      myMap.delete("age");
+      console.log(myMap.size); // Output: 2
+
+      // Clearing the map
+      myMap.clear();
+      console.log(myMap.size); // Output: 0
+
+      const test = [
+        { name: "apples", qty: 5 },
+        { name: "bananas", qty: 10 },
+        { name: "cherries", qty: 15 },
+        { name: "dates", qty: 20 },
+      ];
+
+      console.log(typeof test); // Output: object
+
+      function callback({qty}){
+        return qty > 10 ? "ok" : "low";
+      }
+      const result = Map.groupBy(test, callback);
+      console.log(result); 
+
+      const res = test.map(callback);
+      console.log(res);
+    </script>
+  </body>
+</html>
