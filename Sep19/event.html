@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event in JS</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <p id="res"></p>
+    <button id="btn">show date</button>
+
+    <p id="out"></p>
+    <button onmouseenter="check()">show today's date</button>
+    <script>
+      const btn = document.getElementById("btn");
+      const res = document.getElementById("res");
+
+      btn.addEventListener("click", () => {
+        const date = new Date();
+        res.innerText = date.toString();
+      });
+
+      function check() {
+        document.getElementById("out").innerText = Date();
+      }
+    </script>
+  </body>
+</html>
