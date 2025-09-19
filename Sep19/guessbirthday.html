@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Days till birthday</title>
+</head>
+<body>
+  <h1>Days till birthday</h1>
+  <h2>see the console for output</h2>
+  <p id="res"></p>
+  <script>
+    function daysTillBirthday(birthday) {
+      const today = new Date();
+      const currentYear = today.getFullYear();
+      const nextBirthday = new Date(currentYear, birthday.getMonth(), birthday.getDate());
+
+      if (nextBirthday < today) {
+        nextBirthday.setFullYear(currentYear + 1);
+      }
+
+      const diffTime = nextBirthday - today;
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      return diffDays;
+    }
+
+    const myBirthday = new Date(2004, 8, 25); // pass your birthday here (month is 0-indexed)
+    console.log(`Days until my birthday: ${daysTillBirthday(myBirthday)}`);
+    document.getElementById("res").innerText = `Days until my birthday: ${daysTillBirthday(myBirthday)}`;
+  </script>
+</body>
+</html>
