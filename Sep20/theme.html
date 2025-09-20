@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bulb image-Theme toggle</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1 id="text">Light is on</h1>
+    <img
+      src="on.png"
+      alt="bulb"
+      id="bulb"
+      style="width: 100px; cursor: pointer"
+    />
+    <script>
+      let bulb = document.getElementById("bulb");
+      let text = document.getElementById("text");
+      let isOn = true;
+      bulb.addEventListener("click", () => {
+        if (isOn) {
+          bulb.src = "off.png";
+          document.body.style.backgroundColor = "black";
+          text.innerText = "Light is off";
+          text.style.color = "white";
+          isOn = false;
+        } else {
+          bulb.src = "on.png";
+          document.body.style.backgroundColor = "white";
+          text.innerText = "Light is on";
+          text.style.color = "black";
+          isOn = true;
+        }
+      });
+    </script>
+  </body>
+</html>
