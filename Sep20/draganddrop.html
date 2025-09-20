@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag and Drop Events</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+    <style>
+      #drag-item {
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+        text-align: center;
+        line-height: 100px;
+        margin-bottom: 20px;
+        cursor: grab;
+      }
+      #drop-zone {
+        width: 200px;
+        height: 200px;
+        border: 2px dashed #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Drag and Drop Events in JS</h1>
+
+    <div id="drag-item" draggable="true">Drag me</div>
+    <div
+      id="drop-zone"
+      style="
+        width: 200px;
+        height: 200px;
+        border: 2px dashed #000;
+        margin-top: 20px;
+      "
+    >
+      Drop here
+    </div>
+    <script>
+      const dragItem = document.getElementById("drag-item");
+      const dropZone = document.getElementById("drop-zone");
+
+      dragItem.addEventListener("drag", () => {
+        console.log("Dragging the item");
+      });
+      dragItem.addEventListener("dragend", () => {
+        console.log("Drag operation ended");
+      });
+
+      dragItem.addEventListener("dragstart", (e) => {
+        e.dataTransfer.setData("text/plain", e.target.id);
+      });
+
+      dropZone.addEventListener("dragenter", (e) => {
+        e.preventDefault();
+        console.log("Drag entered the drop zone");
+      });
+
+      dropZone.addEventListener("dragleave", () => {
+        console.log("Drag left the drop zone");
+      });
+
+      dropZone.addEventListener("dragover", (e) => {
+        console.log("Drag over the drop zone");
+        e.preventDefault();
+      });
+
+      dropZone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        const id = e.dataTransfer.getData("text/plain");
+        const draggableElement = document.getElementById(id);
+        dropZone.appendChild(draggableElement);
+      });
+    </script>
+  </body>
+</html>
