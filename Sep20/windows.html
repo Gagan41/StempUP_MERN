@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Windows events</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>Windows events</h1>
+    <script>
+      window.addEventListener("load", () => {
+        console.log("load event fired:Page is loaded");
+      });
+      window.addEventListener("blur", () => {
+        console.log("blur event fired:Page is not in focus");
+      });
+      window.addEventListener("focus", () => {
+        console.log("focus event fired:Page is in focus");
+      });
+      window.addEventListener("resize", () => {
+        console.log("resize event fired:Window is resized");
+        console.log("New width: " + window.innerWidth);
+        console.log("New height: " + window.innerHeight);
+      });
+      window.addEventListener("scroll", () => {
+        console.log("scroll event fired:Page is scrolled");
+      });
+      window.addEventListener("offline", () => {
+        console.log("offline event fired:Page is offline");
+      });
+      window.addEventListener("online", () => {
+        console.log("online event fired:Page is online");
+      });
+      window.addEventListener("beforeunload", (e) => {
+        console.log("beforeunload event fired:before leaving the page");
+        e.returnValue = "Are you sure you want to leave?";
+      });
+      window.addEventListener("unload", () => {
+        console.log("unload event fired:Page is unloaded");
+      });
+      window.addEventListener("error", (e) => {
+        console.log("Happy to fix this error");
+        console.log("error event fired:An error occurred", e.message);
+        console.log("Error file:", e.filename);
+        console.log("Error line number:", e.lineno);
+      });
+      //nonExistentFunction();
+    </script>
+  </body>
+</html>
