@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clipboard events in JS</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <p id="text">hello how are you</p>
+    <p id="t2">i am fine</p>
+
+    <input type="password" placeholder="password" id="pass">
+    <script>
+      const text = document.getElementById("text");
+      const t2 = document.getElementById("t2");
+
+      text.addEventListener("copy", (e) => {
+        e.preventDefault();
+        console.log("you copied the text");
+        if (e.clipboardData) {
+          e.clipboardData.setData("text/plain", "I am copied text");
+          console.log(e.clipboardData.getData("text"));
+        }
+      });
+
+      t2.addEventListener("copy", (e) => {
+        e.preventDefault();
+        alert("copying not allowed");
+      });
+
+      text.addEventListener("cut", (e) => {
+        e.preventDefault();
+        console.log("you cut the text");
+        if (e.clipboardData) {
+          e.clipboardData.setData("text/plain", "I am cut text");
+          console.log(e.clipboardData.getData("text"));
+          text.innerText = "";
+        }
+      });
+
+      text.addEventListener("paste", (e) => {
+        e.preventDefault();
+        console.log("you pasted the text");
+        let pasteText = "";
+        if (e.clipboardData) {
+          pasteText = e.clipboardData.getData("text");
+          console.log(pasteText);
+        }
+        text.innerText = pasteText;
+      });
+
+      let pass = document.getElementById("pass");
+      pass.addEventListener("paste", (e) => {
+        e.preventDefault();
+        alert("pasting not allowed");
+      });
+    </script>
+  </body>
+</html>
