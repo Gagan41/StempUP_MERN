@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>H1 element strike</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1 id="strike">h1 element strike using JS event</h1>
+    <script>
+      let h1 = document.getElementById("strike");
+      h1.addEventListener("click", () => {
+        h1.style.textDecoration = "line-through";
+      });
+      h1.addEventListener("dblclick", () => {
+        h1.innerText = "";
+      });
+    </script>
+  </body>
+</html>
