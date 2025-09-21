@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Task Planner</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>📅 Smart Task Planner</h1>
+    </header>
+
+    <main>
+      <section id="task-form-section">
+        <h2>Add New Task</h2>
+        <form id="taskForm">
+          <label for="title">Task Title:</label>
+          <input type="text" id="title" required />
+
+          <label for="description">Description:</label>
+          <textarea id="description" required></textarea>
+
+          <label for="dueDate">Due Date:</label>
+          <input type="date" id="dueDate" required />
+
+          <button type="submit">Add Task</button>
+        </form>
+      </section>
+      <section id="controls">
+        <button onclick="showAllTasks()">Show All Tasks</button>
+        <button onclick="showTodayTasks()">Show Today’s Tasks</button>
+      </section>
+      <section id="task-list-section">
+        <h2>Task List</h2>
+        <ul id="taskList"></ul>
+      </section>
+      <section id="countdown-section">
+        <h2>⏳ Next Deadline</h2>
+        <p id="countdown">No tasks available</p>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Smart Task Planner | Made for College Students</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

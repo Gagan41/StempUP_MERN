@@ -1,0 +1,96 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9fafc;
+  color: #333;
+}
+
+header, footer {
+  background: #0077b6;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+h1, h2 {
+  color: #023e8a;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #e0f7fa;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+form input, form textarea, form button {
+  padding: 8px;
+  font-size: 1rem;
+}
+
+/* Buttons */
+button {
+  background: #0077b6;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #023e8a;
+}
+
+/* Tasks */
+#taskList {
+  list-style: none;
+  padding: 0;
+}
+
+.task {
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task.pending {
+  background: #fff3cd; /* Yellow */
+}
+
+.task.completed {
+  background: #d4edda; /* Green */
+  text-decoration: line-through;
+}
+
+.task.overdue {
+  background: #f8d7da; /* Red */
+}
+
+.task button {
+  margin-left: 10px;
+  background: #0096c7;
+}
+
+.task button:hover {
+  background: #023e8a;
+}
+
+/* Countdown */
+#countdown {
+  font-weight: bold;
+  color: #d00000;
+}
