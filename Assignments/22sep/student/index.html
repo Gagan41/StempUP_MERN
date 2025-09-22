@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Attendance Manager</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🎓 Student Attendance Manager</h1>
+      <p>Track daily and total attendance with ease</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Mark Attendance</h2>
+        <form id="attendanceForm">
+          <label for="studentName">Enter student name:</label>
+          <input type="text" id="studentName" placeholder="e.g., Alice" />
+          <button type="submit">Mark Present</button>
+        </form>
+        <p id="errorMessage" class="error"></p>
+      </section>
+
+      <section>
+        <h2>Today's Attendance</h2>
+        <ul id="todayAttendance"></ul>
+        <button id="endDayBtn">End Day & Update Records</button>
+      </section>
+
+      <section>
+        <h2>Attendance Report</h2>
+        <button id="showReportBtn">Show Full Report</button>
+        <ul id="attendanceReport"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Student Attendance Manager</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
