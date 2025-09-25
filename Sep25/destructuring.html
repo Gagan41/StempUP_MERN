@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring in JS</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>
+      destrtucturing in JS
+      <h2>see the console for output</h2>
+    </h1>
+
+    <script>
+      //swapping values of variables using destructuring
+      let first = "Bharat";
+      let second = "Kumar";
+
+      [first, second] = [second, first];
+      console.log(`Firstname is ${first}`);
+      console.log(`Secondname is ${second}`);
+
+      //Destructuring Maps
+      let fruits = new Map([
+        ["apple", "100"],
+        ["banana", "200"],
+        ["grapes", "300"],
+      ]);
+      let test = "";
+      for (const [key, value] of fruits) {
+        test += `${key} costs ${value} \n`;
+      }
+      console.log(test);
+
+      //destructuring Arrays
+      let fruitsArray = ["apple", "banana", "grapes", "mango", "orange"];
+      let [fruit1, , , fruit2, fruit3] = fruitsArray; //by using ,, and passing empty , we can skip the elements in the array
+      console.log(fruit1);
+      console.log(fruit2);
+      console.log(fruit3);
+
+      //picking values from specific index in array
+      const{[0]:firstFruit,[3]:secondFruit} = fruitsArray;
+      console.log(firstFruit);
+      console.log(secondFruit);
+
+      //Rest in destructuring
+      let numsbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      let [num1, num2, ...rest] = numsbers;
+      console.log(num1, num2);
+      console.log(rest);
+    </script>
+  </body>
+</html>
