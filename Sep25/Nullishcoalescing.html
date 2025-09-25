@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nullish Coalescing</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>Nullish Coalescing in JS</h1>
+    <h2>see the console for output</h2>
+    <script>
+      let name = null;
+      let test = "missing";
+      let result = name ?? test; 
+      console.log(result); // Output: "missing"
+
+      //optional chasing operator ?.
+      const car = {type:"Fiat", model:"500", color:"white"};
+      console.log(car.type);
+      console.log(car?.name); 
+      console.log(car.name);
+    </script>`
+  </body>
+</html>
