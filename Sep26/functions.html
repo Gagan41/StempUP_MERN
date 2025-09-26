@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>using functions calculate addidtion of two numbers</h1>
+    <script>
+      //Example 1
+
+    function myDisplay(sum) {
+      console.log(`${sum}`);
+    } 
+
+    function calculate(a,b){
+      let c = a+b;
+      return c;
+    }
+
+    let res = calculate(5,6);
+    myDisplay(res);
+
+    //Example 2
+
+    function display(sum){
+      console.log(`${sum}`);
+    }
+
+    function calc(a,b){
+      let c = a+b;
+      display(c);
+    }
+
+    calc(10,20);
+
+    //callback function
+
+    function myDis(sum){
+      console.log(`${sum}`);
+    } 
+    function cal(a,b,callback){
+      let c = a+b;
+      callback(c);
+    }
+
+    cal(15,25,myDis);
+
+
+    //another example of callback function
+    const num = [1,2,3,4,5,6,-1,-2,-3,-4,0];
+    const pos = removeNegative(num , (x) => x >= 0);
+    function removeNegative(arr, callback){
+      const result = [];
+      for(const x of num){
+        if(callback(x)){
+          result.push(x);
+        }
+      }
+      return result;
+    }
+    console.log(`Positive numbers are: ${pos}`);
+    // for(const x of pos){
+    //   console.log(x);
+    // }
+    </script>
+  </body>
+</html>
