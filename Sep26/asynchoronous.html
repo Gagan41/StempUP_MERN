@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asynchronous Function</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>Asynchronous Function</h1>
+    <script>
+      console.log("Start");
+      let a = setTimeout(() => {
+        console.log("this will exectute in 10 seconds");
+      }, 10000);
+      let b = setInterval(() => {
+        console.log("Testing");
+      }, 10000);
+      console.log("End");
+
+      // clearInterval(a);
+      // clearTimeout(b);
+
+      console.log("Start 0");
+      setTimeout(() => {
+        console.log("start 1");
+        setTimeout(() => {
+          console.log("start 2");
+          setTimeout(() => {
+            console.log("start 3");
+            setTimeout(() => {
+              console.log("start 4");
+            }, 1000);
+          }, 1000);
+        }, 1000);
+      }, 1000);
+      console.log("End 0")
+
+      console.log("First");
+      queueMicrotask(()=>{console.log("second")});
+      console.log("third");
+    </script>
+  </body>
+</html>
