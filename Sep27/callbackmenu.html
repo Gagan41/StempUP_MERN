@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback function in ordering pizza</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>Callback function in ordering pizza</h1>
+    <h2>see the console for output</h2>
+    <script>
+      function orderFood(callback) {
+        setTimeout(() => {
+          console.log("food ordered");
+          callback();
+        }, 1000);
+      }
+
+      function cookFood(callback) {
+        setTimeout(() => {
+          console.log("food cooked");
+          callback();
+        }, 1000);
+      }
+
+      function ServeFood() {
+        setTimeout(() => {
+          console.log("food served");
+        }, 1000);
+      }
+
+      //Nested callbacks
+      orderFood(() => {
+        cookFood(() => {
+          ServeFood();
+        });
+      });
+    </script>
+  </body>
+</html>
