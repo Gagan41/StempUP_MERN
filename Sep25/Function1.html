@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions 25/09/25</title>
+</head>
+<body>
+    <p id="count">0</p>
+    <button id="btn">count</button>
+    <script>
+       
+
+        function mycounter(){
+        let counter = 0; 
+             return function(){
+            counter++;
+            return counter;
+             } 
+        }
+        let add = mycounter();
+       
+    btn.addEventListener('click',function(){
+        document.getElementById("count").innerText = add();
+
+    });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function 25/09/25</title>
+</head>
+<body>
+    <script>
+        const x = function (a,b) {return a*b};
+        let z = x(4,3);
+        console.log(z);
+        
+
+
+        const y = new Function("a" , "b", "return a*b;");
+        let a = x(4,3);
+        console.log(a);
+    
+
+        //Self invoke Function
+        (function(){
+            let x1="Hello";
+           console.log(x1);
+        })();
+    
+        //Arguments of Length
+          const s = function(a,b){return arguments.length};
+        console.log(s(2,4));
+
+        //Arrow Function
+        let x2 = (a,b) => a*b;
+        console.log(x2(3,4));
+        //Arrow Function Without-Parameter
+        let x3 = (d,e) => {return d*e};
+        console.log(x3(2,2));
+
+        //Rest Parameters
+       
+
+        function sum(...args){
+            let total =0;
+            for(let i of args){total+=i;
+            }
+            return total;
+            
+        }
+         let x4 =sum(2,3,4,5,6,7,8,9,11,22,33,66);
+        console.log(x4);
+       
+        //{...}Spread operators 
+        //Spread Operator & Rest Parameter  
+      
+   
+    </script>
+</body>
+</html>
