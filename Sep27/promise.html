@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise in JS</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>Promise in JS</h1>
+    <h2>see the console for output</h2>
+    <script>
+      let p = new Promise((resolve, result) => {
+        let a = 1 + 1;
+        if (a === 2) {
+          resolve("success");
+        } else {
+          result("failed");
+        }
+      });
+      //then means success and catch means failure
+      p.then((message) => {
+        console.log("This is in then :" + message);
+      }).catch((message) => {
+        console.log("This is in the catch :" + message);
+      });
+    </script>
+  </body>
+</html>
