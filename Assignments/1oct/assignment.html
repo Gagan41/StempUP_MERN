@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async and callback assignment</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>Async and callback assignment</h1>
+    <h2>see the cosnole for output</h2>
+    <script>
+      function greet(name, callback) {
+        console.log(`Hello, ${name}!`);
+        callback();
+      }
+
+      greet("Student", () => {
+        console.log("Welcome to Asynchronous JS assignment!\n");
+      });
+
+      function task1(callback) {
+        setTimeout(() => {
+          // Random success/failure simulation
+          if (Math.random() < 0.5) {
+            callback(null, "Task 1 completed");
+          } else {
+            callback("❌ Task 1 failed", null);
+          }
+        }, 1000);
+      }
+
+      function task2(callback) {
+        setTimeout(() => {
+          if (Math.random() < 0.5) {
+            callback(null, "Task 2 completed");
+          } else {
+            callback("❌ Task 2 failed", null);
+          }
+        }, 2000);
+      }
+
+      function task3(callback) {
+        setTimeout(() => {
+          if (Math.random() < 0.5) {
+            callback(null, "Task 3 completed");
+          } else {
+            callback("❌ Task 3 failed", null);
+          }
+        }, 1000);
+      }
+
+      console.log("=== Callback Hell Simulation ===");
+      task1((err, result) => {
+        if (err) return console.log(err);
+
+        console.log(result);
+        task2((err, result) => {
+          if (err) return console.log(err);
+
+          console.log(result);
+          task3((err, result) => {
+            if (err) return console.log(err);
+
+            console.log(result);
+            console.log("All tasks completed successfully (via callbacks)!\n");
+          });
+        });
+      });
+
+      function task1Promise() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            Math.random() < 0.5
+              ? resolve("Task 1 completed")
+              : reject("❌ Task 1 failed");
+          }, 1000);
+        });
+      }
+
+      function task2Promise() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            Math.random() < 0.5
+              ? resolve("Task 2 completed")
+              : reject("❌ Task 2 failed");
+          }, 2000);
+        });
+      }
+
+      function task3Promise() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            Math.random() < 0.5
+              ? resolve("Task 3 completed")
+              : reject("❌ Task 3 failed");
+          }, 1000);
+        });
+      }
+
+      console.log("=== Promise Chain Simulation ===");
+      task1Promise()
+        .then((msg) => {
+          console.log(msg);
+          return task2Promise();
+        })
+        .then((msg) => {
+          console.log(msg);
+          return task3Promise();
+        })
+        .then((msg) => {
+          console.log(msg);
+          console.log("All tasks completed successfully (via promises)!\n");
+        })
+        .catch((err) => {
+          console.log(err);
+          console.log("Task execution stopped due to error.\n");
+        });
+
+      async function runTasks() {
+        console.log("=== Async/Await Simulation ===");
+        try {
+          const result1 = await task1Promise();
+          console.log(result1);
+
+          const result2 = await task2Promise();
+          console.log(result2);
+
+          const result3 = await task3Promise();
+          console.log(result3);
+
+          console.log("All tasks completed successfully (via async/await)!\n");
+        } catch (error) {
+          console.log(error);
+          console.log("Task execution stopped due to error.\n");
+        }
+      }
+
+      runTasks();
+    </script>
+  </body>
+</html>
