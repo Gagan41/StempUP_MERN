@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using resolve and Reject in Promise</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>Using resolve and Reject in Promise</h1>
+    <h2>see the console for output</h2>
+    <script>
+      let foodOrdered = true;
+      function orderFood() {
+        return new Promise((resolve, reject) => {
+          if (foodOrdered) {
+            setTimeout(() => {
+              resolve("Food Ordered");
+            }, 1000);
+          } else {
+            reject("Problem while ordering");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
