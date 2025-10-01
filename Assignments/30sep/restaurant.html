@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Simulation</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <h1>Restaurant Simulation</h1>
+    <h2>see the console for otuput</h2>
+    <script>
+      function orderFood(hasMoney) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            if (hasMoney) {
+              resolve("Food ordered");
+            } else {
+              reject("Order failed: No money");
+            }
+          }, 1000);
+        });
+      }
+      function cookFood(hasIngredients) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            if (hasIngredients) {
+              resolve("Food cooked");
+            } else {
+              reject("Cooking failed: Ingredients unavailable");
+            }
+          }, 2000);
+        });
+      }
+      function serveFood(waiterAvailable) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            if (waiterAvailable) {
+              resolve("Food served");
+            } else {
+              reject("Serving failed: No waiter available");
+            }
+          }, 1000);
+        });
+      }
+      const hasMoney = true;
+      const hasIngredients = true;
+      const waiterAvailable = true;
+
+      orderFood(hasMoney)
+        .then((msg) => {
+          console.log(msg);
+          return cookFood(hasIngredients);
+        })
+        .then((msg) => {
+          console.log("\n" + msg);
+          return serveFood(waiterAvailable);
+        })
+        .then((msg) => {
+          console.log("\n" + msg);
+          console.log("\nDone!");
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          console.log("\nRestaurant closing...");
+        });
+    </script>
+  </body>
+</html>
