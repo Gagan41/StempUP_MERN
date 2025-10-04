@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather API</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f0f4f8;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .main {
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        width: 350px;
+      }
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+      pre {
+        text-align: left;
+        background: #f8f9fa;
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+        font-size: 14px;
+        color: #333;
+      }
+      .btn {
+        padding: 10px 20px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      #cityInput {
+        padding: 10px;
+        width: 80%;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Weather App</h1>
+
+      <input type="text" id="cityInput" placeholder="Enter city name" />
+      <br />
+      <button class="btn" onclick="getWeather()">Get Weather</button>
+
+      <pre id="weatherOutput"></pre>
+    </div>
+
+    <script>
+      const API_KEY = "686f9da75d4f982a1130a651aa980fc9";
+
+      async function getWeather() {
+        const city = document.getElementById("cityInput").value;
+        const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+
+        try {
+          const res = await fetch(URL);
+          if (!res.ok) {
+            const err = await res.json();
+            document.getElementById("weatherOutput").textContent =
+              "Error: " + err.message;
+            return;
+          }
+
+          const data = await res.json();
+          const weatherInfo = `
+            Location: ${data.name}, ${data.sys.country}
+            Temperature: ${data.main.temp}°C
+            Feels Like: ${data.main.feels_like}°C
+            Humidity: ${data.main.humidity}%
+            Condition: ${data.weather[0].description}
+            Wind Speed: ${data.wind.speed} m/s
+          `;
+          document.getElementById("weatherOutput").textContent = weatherInfo;
+        } catch (err) {
+          document.getElementById("weatherOutput").textContent =
+            "Fetch failed: " + err.message;
+        }
+      }
+    </script>
+  </body>
+</html>
