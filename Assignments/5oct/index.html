@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Browser Dashboard — BOM Playground</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🔮 Browser Dashboard — BOM Playground</h1>
+      <p class="tagline">Explore the Browser Object Model (window, navigator, screen, history, timers) in a playful UI.</p>
+    </header>
+
+    <main class="container">
+      <section class="panel inputs">
+        <h2>1. User Interaction</h2>
+        <div class="controls">
+          <button id="confirmBtn" class="btn">Try Confirm</button>
+          <button id="promptBtn" class="btn">Try Prompt</button>
+          <button id="welcomeReplay" class="btn">Replay Welcome Alert</button>
+        </div>
+        <div class="output">
+          <p><strong>Confirm Result:</strong> <span id="confirmResult">(no answer yet)</span></p>
+          <p><strong>Prompt Result:</strong> <span id="promptResult">(no name yet)</span></p>
+        </div>
+      </section>
+
+      <section class="panel info-panels">
+        <h2>2. Window & Navigator Info</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Window Size</h3>
+            <p>inner: <span id="innerSize">—</span></p>
+            <p>outer: <span id="outerSize">—</span></p>
+          </div>
+
+          <div class="card">
+            <h3>Screen</h3>
+            <p>screen: <span id="screenSize">—</span></p>
+            <p>avail: <span id="screenAvail">—</span></p>
+          </div>
+
+          <div class="card">
+            <h3>Location (URL)</h3>
+            <p>href: <span id="href">—</span></p>
+            <p>protocol: <span id="protocol">—</span></p>
+            <p>hostname: <span id="hostname">—</span></p>
+            <p>pathname: <span id="pathname">—</span></p>
+          </div>
+
+          <div class="card">
+            <h3>Navigator</h3>
+            <p>userAgent: <span id="ua">—</span></p>
+            <p>platform: <span id="platform">—</span></p>
+            <p>language: <span id="language">—</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel methods">
+        <h2>3. Window Methods (Try them)</h2>
+        <div class="controls">
+          <button id="openWindow" class="btn">Open New Window</button>
+          <button id="closeWindow" class="btn">Close Last Opened</button>
+          <button id="reloadPage" class="btn">Reload Page</button>
+          <button id="backBtn" class="btn">History Back</button>
+          <button id="forwardBtn" class="btn">History Forward</button>
+          <button id="printBtn" class="btn">Print Page</button>
+        </div>
+        <p class="hint">(open/close works only for windows opened by this page)</p>
+      </section>
+
+      <section class="panel timers">
+        <h2>4. Timers & Dynamic Updates</h2>
+        <div class="timebox">
+          <p><strong>Current Time:</strong> <span id="currentTime">—</span></p>
+          <p><strong>Delayed Message:</strong> <span id="delayedMsg">(waiting)</span></p>
+          <div class="controls">
+            <button id="startClock" class="btn">Start Clock</button>
+            <button id="stopClock" class="btn">Stop Clock</button>
+            <button id="startTimerMsg" class="btn">Start Delayed Message (3s)</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel history">
+        <h2>5. Interaction History</h2>
+        <div id="historyList" class="historyList" aria-live="polite"></div>
+        <div class="controls small">
+          <button id="clearHistory" class="btn small">Clear History</button>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <p>Built using the Browser Object Model · <small>Open console to see debug logs</small></p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
