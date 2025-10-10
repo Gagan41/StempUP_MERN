@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Smart Weather Forecast Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.canva.com/web/images/70fd3febf6db730977892f46e3cb142e.png"
+    />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <h1 class="logo">OpenWeatherMap API Testing</h1>
+
+        <div class="controls">
+          <div class="search">
+            <input
+              id="cityInput"
+              type="text"
+              placeholder="Search city (e.g. London)"
+            />
+            <button id="searchBtn" title="Search">🔎</button>
+            <button id="voiceBtn" title="Voice search">🎤</button>
+          </div>
+
+          <div class="toggles">
+            <button id="unitToggle">°C</button>
+            <button id="themeToggle">Auto</button>
+          </div>
+        </div>
+      </header>
+
+      <section class="main-grid">
+        <aside class="history">
+          <h2>Search History</h2>
+          <ul id="historyList"></ul>
+          <button id="clearHistory" class="muted">Clear</button>
+        </aside>
+
+        <section class="weather-panel">
+          <div id="currentCard" class="card current">
+            <div class="topline">
+              <div>
+                <h2 id="cityName">—</h2>
+                <div id="localTime" class="muted">—</div>
+                <div id="timezone" class="muted small">Time zone: —</div>
+              </div>
+              <div class="icon">
+                <img id="weatherIcon" src="" alt="" />
+              </div>
+            </div>
+
+            <div class="metrics">
+              <div class="metric">
+                <div class="label">Temperature</div>
+                <div id="temp" class="value">—</div>
+              </div>
+              <div class="metric">
+                <div class="label">Humidity</div>
+                <div id="humidity" class="value">—</div>
+              </div>
+              <div class="metric">
+                <div class="label">Wind</div>
+                <div id="wind" class="value">—</div>
+              </div>
+            </div>
+
+            <div id="condition" class="condition muted">—</div>
+            <div id="alerts" class="alerts"></div>
+          </div>
+
+          <div class="card forecast" id="forecastCard">
+            <h3>5-Day Forecast</h3>
+            <div id="forecastContainer" class="forecast-grid"></div>
+          </div>
+        </section>
+      </section>
+
+      <footer class="footer">Built with OpenWeatherMap API &copy; 2025</footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
