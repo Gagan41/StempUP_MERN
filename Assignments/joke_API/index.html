@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Smart Joke Dashboard 🌈🤣</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😂</text></svg>"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <header class="topbar">
+        <h1 class="brand">Smart Joke Station</h1>
+        <div class="datetime" id="datetime">
+          <div id="date">—</div>
+          <div id="time">—</div>
+        </div>
+      </header>
+
+      <section class="controls">
+        <label for="category">Category</label>
+        <select id="category" aria-label="Choose joke category">
+          <!-- Categories chosen to match JokeAPI v2 where possible -->
+          <option value="Any">Any</option>
+          <option value="Programming">Programming</option>
+          <option value="Misc">Misc</option>
+          <option value="Pun">Pun</option>
+          <option value="Dark">Dark</option>
+          <option value="Spooky">Spooky</option>
+          <option value="Christmas">Christmas</option>
+        </select>
+
+        <button id="getJokeBtn" class="btn primary">Get Another Joke</button>
+        <button id="randomJokeBtn" class="btn">Surprise Me</button>
+      </section>
+
+      <section class="main-area">
+        <div class="joke-area">
+          <div id="jotd" class="jotd">
+            <h2>Joke of the Day</h2>
+            <div id="jotdCard" class="joke-card neon">
+              <div class="reaction" id="reaction">😄</div>
+              <div class="joke-content" id="jokeContent">Loading...</div>
+              <div class="joke-meta" id="jokeMeta"></div>
+            </div>
+          </div>
+
+          <div class="history-panel">
+            <h3>History</h3>
+            <ul id="historyList" class="history-list"></ul>
+            <button id="clearHistoryBtn" class="btn small">
+              Clear History
+            </button>
+          </div>
+        </div>
+
+        <aside class="sidebar">
+          <div class="preview">
+            <h3>Current Joke</h3>
+            <div id="currentCard" class="joke-card neon large">
+              <div class="reaction" id="currentReaction">🙂</div>
+              <div class="joke-content" id="currentContent">
+                Click "Get Another Joke" — or choose a category.
+              </div>
+              <div class="joke-meta" id="currentMeta"></div>
+            </div>
+
+            <div class="actions">
+              <button id="copyBtn" class="btn">Copy</button>
+              <button id="shareBtn" class="btn">Share</button>
+              <button id="saveBtn" class="btn">Save to History</button>
+            </div>
+          </div>
+
+          <div class="tips">
+            <h4>Tip</h4>
+            <p>
+              Use the category selector to change the mood — background and
+              reaction change with the type of joke.
+            </p>
+          </div>
+        </aside>
+      </section>
+
+      <footer class="footer">
+        <small
+          >Built with JOKE API
+          <a href="https://v2.jokeapi.dev" target="_blank">JokeAPI</a></small
+        >
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
