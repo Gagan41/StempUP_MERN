@@ -1,0 +1,199 @@
+/* ---------- Global Reset & Base Styles ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: lightblue;
+  color: #333;
+  line-height: 1.6;
+}
+
+main,
+header,
+footer {
+  max-width: 1100px;
+  margin: auto;
+  padding: 1rem;
+}
+
+/* ---------- Header ---------- */
+header {
+  background: #1a237e;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  border-bottom: 4px solid #3949ab;
+  position: relative;
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+}
+
+/* Greeting & visitor text added dynamically */
+header p {
+  margin-top: 0.3rem;
+  font-size: 1rem;
+  color: #cfd8dc;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* ---------- Navigation ---------- */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.3rem 0.6rem;
+  transition: 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  background: white;
+  color: #1a237e;
+  border-radius: 5px;
+}
+
+/* ---------- Sections ---------- */
+section {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+h2 {
+  color: #1a237e;
+  margin-bottom: 1rem;
+}
+
+/* Mission toggle button style */
+.toggle-btn {
+  background: #3949ab;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.8rem;
+  transition: 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background: #5c6bc0;
+  transform: scale(1.05);
+}
+
+/* ---------- Images ---------- */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: opacity 0.3s ease;
+}
+
+/* ---------- Tables ---------- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem auto;
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+table th,
+table td {
+  border: 1px solid #ccc;
+  padding: 0.8rem;
+  text-align: center;
+  background-color: aquamarine;
+}
+
+table th {
+  background: #e8eaf6;
+  color: #1a237e;
+}
+
+/* ---------- Forms ---------- */
+form {
+  margin-top: 1rem;
+}
+
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  padding: 0.6rem;
+  margin: 0.3rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background: #1a237e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover,
+button:focus {
+  background: #3949ab;
+  transform: scale(1.03);
+}
+
+/* ---------- Testimonials (added dynamically) ---------- */
+section ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  text-align: left;
+  display: inline-block;
+}
+
+section ul li {
+  margin: 0.5rem 0;
+  background: #e8f5e9;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  animation: fadeIn 1s ease;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background: #1a237e;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  position: relative;
+}
+
+#live-clock {
+  font-weight: bold;
+  margin-left: 0.5rem;
+  color: #ffeb3b;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
